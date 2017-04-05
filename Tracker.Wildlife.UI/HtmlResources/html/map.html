@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>View Email</title>
+    <style type="text/css">
+        body
+        {
+            margin: 0;
+            padding:0;
+            overflow:hidden;
+        }
+        
+        #toolbarTop
+        {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        #mailEditor
+        {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="../ckeditor/adapters/jquery.js"></script>
+</head>
+<body>
+    <canvas>
+
+    </canvas>
+   Hello world!
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //ResizeReadingFrame();
+        })
+
+        //function ResizeReadingFrame() {
+        //    $("#readingFrame").css("width", "100%");
+        //    $("#readingFrame").css("height", $(window).height());
+        //    $("#readingFrame").css("border", "none");
+        //    $("#readingFrame").css("box-shadow", "none");
+        //    $("#toolbarBottom").css("display", "none");  
+        //}
+
+        //function CreateReplyEditor() {
+        //    //alert("Creating Reply Editor");
+        //    var mailEditor = CKEDITOR.instances['mailEditor'];
+        //    if (mailEditor && $("#readingFrame").data("editorType") === "reply")
+        //        return;
+        //    if (mailEditor && $("#readingFrame").data("editorType") === "compose")
+        //        DestroyEditor();
+        //    if (!CKEDITOR.instances['mailEditor']) {
+        //        $("#mailEditor").ckeditor(function (textarea) {
+        //            $("#readingFrame").data("editorType", "reply");
+        //            $("#readingFrame").css("height", $(window).height() - 200);
+        //            $("#cke_mailEditor").css("margin", "2px");
+        //            //$("#cke_mailEditor").css("border", "dotted 1px #222");
+        //            $("#cke_mailEditor").css("box-shadow", "none");
+                    
+        //        },
+        //            {
+        //                uiColor: '#8fbc8b',
+        //                height: 150,
+        //                startupFocus: true,
+        //                on: { 'instanceReady': function (evt) {
+                            
+        //                }
+        //                }
+        //            });
+        //    }
+        //}
+
+        //function DestroyEditor() {
+        //    if (CKEDITOR.instances['mailEditor']) {
+        //        CKEDITOR.instances['mailEditor'].destroy(true);
+        //    }
+        //}
+
+    </script>
+</body>
+</html>
