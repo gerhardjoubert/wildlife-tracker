@@ -28,36 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.miSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlCwb = new System.Windows.Forms.Panel();
+            this.miMap = new System.Windows.Forms.ToolStripMenuItem();
+            this.miChart = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(675, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miChart,
+            this.miMap,
+            this.miSettings});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(809, 24);
+            this.menuStrip.TabIndex = 0;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // miSettings
+            // 
+            this.miSettings.Name = "miSettings";
+            this.miSettings.Size = new System.Drawing.Size(70, 20);
+            this.miSettings.Text = "Settings...";
+            this.miSettings.Click += new System.EventHandler(this.miSetup_Click);
             // 
             // pnlCwb
             // 
             this.pnlCwb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCwb.Location = new System.Drawing.Point(0, 24);
             this.pnlCwb.Name = "pnlCwb";
-            this.pnlCwb.Size = new System.Drawing.Size(675, 292);
+            this.pnlCwb.Size = new System.Drawing.Size(809, 417);
             this.pnlCwb.TabIndex = 1;
+            // 
+            // miMap
+            // 
+            this.miMap.Name = "miMap";
+            this.miMap.Size = new System.Drawing.Size(43, 20);
+            this.miMap.Text = "Map";
+            this.miMap.Click += new System.EventHandler(this.miMap_Click);
+            // 
+            // miChart
+            // 
+            this.miChart.Name = "miChart";
+            this.miChart.Size = new System.Drawing.Size(48, 20);
+            this.miChart.Text = "Chart";
+            this.miChart.Click += new System.EventHandler(this.miChart_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 316);
+            this.ClientSize = new System.Drawing.Size(809, 441);
             this.Controls.Add(this.pnlCwb);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wildlife Tracker";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -65,8 +100,11 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.Panel pnlCwb;
+        private System.Windows.Forms.ToolStripMenuItem miSettings;
+        private System.Windows.Forms.ToolStripMenuItem miMap;
+        private System.Windows.Forms.ToolStripMenuItem miChart;
     }
 }
 

@@ -5,9 +5,11 @@ using System.Web;
 
 namespace Tracker.Wildlife.Api.Models
 {
-    public class Animal
+    public class Location
     {
         public int Id { get; set; }
-        public int SpeciesId { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
+        public DateTime Timestamp { get; set; }
     }
 }

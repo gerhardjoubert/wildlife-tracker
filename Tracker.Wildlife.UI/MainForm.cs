@@ -1,5 +1,6 @@
 ﻿using CefSharp;
 using CefSharp.WinForms;
+using Planner.UI.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,7 @@ namespace Tracker.Wildlife.UI
         public MainForm()
         {
             InitializeComponent();
-            InitCef();
+            //InitCef();
             InitBrowser();
         }
 
@@ -59,5 +60,45 @@ namespace Tracker.Wildlife.UI
             string page = string.Format(@"{0}\HTMLResources\html\map.html", Application.StartupPath);
             cwb.Load(page);
         }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            ChromeDevToolsSystemMenu.CreateSysMenu(this, ChromeDevToolsLocation.Mail);
+            base.OnHandleCreated(e);
+        }
+
+        protected override void WndProc(ref System.Windows.Forms.Message m)
+        {
+            base.WndProc(ref m);
+
+            // Test if the Chrome Dev Tools item was selected from the system menu
+            if (m.Msg == ChromeDevToolsSystemMenu.WM_SYSCOMMAND)
+            {
+                if ((int)m.WParam == ChromeDevToolsSystemMenu.SYSMENU_CHROME_DEV_TOOLS_MAIL)
+                    cwb.ShowDevTools();
+            }
+        }
+
+        #region Menu
+       
+        private void miChart_Click(object sender, EventArgs e)
+        {
+            string page = string.Format(@"{0}\HTMLResources\html\chart.html", Application.StartupPath);
+            cwb.Load(page);
+        }
+
+        private void miMap_Click(object sender, EventArgs e)
+        {
+            string page = string.Format(@"{0}\HTMLResources\html\map.html", Application.StartupPath);
+            cwb.Load(page);
+        }
+
+        private void miSetup_Click(object sender, EventArgs e)
+        {
+            Settings s = new Settings();
+            s.ShowDialog();
+        }
+
+        #endregion
     }
 }

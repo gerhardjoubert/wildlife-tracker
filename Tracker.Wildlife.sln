@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker.Wildlife.Data", "Tracker.Wildlife.Data\Tracker.Wildlife.Data.csproj", "{47951BB7-5865-44F1-8256-FE11869F8E36}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker.Wildlife.UI", "Tracker.Wildlife.UI\Tracker.Wildlife.UI.csproj", "{8A96EEFF-37EF-47ED-A3F3-4A27673BF5E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker.Wildlife.Test", "Tracker.Wildlife.Test\Tracker.Wildlife.Test.csproj", "{059A598C-8A81-4BB7-92A9-F99FE7B4CD10}"
@@ -13,16 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker.Wildlife.Api.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker.Wildlife.Api", "Tracker.Wildlife.Api\Tracker.Wildlife.Api.csproj", "{CA22CE4E-1FEA-48EA-BEBA-F1B323C075E3}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Tracker.Wildlife.Setup", "Tracker.Wildlife.Setup\Tracker.Wildlife.Setup.vdproj", "{744E596F-96DF-453D-8103-D27B64DDEFC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{47951BB7-5865-44F1-8256-FE11869F8E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47951BB7-5865-44F1-8256-FE11869F8E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47951BB7-5865-44F1-8256-FE11869F8E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47951BB7-5865-44F1-8256-FE11869F8E36}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A96EEFF-37EF-47ED-A3F3-4A27673BF5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8A96EEFF-37EF-47ED-A3F3-4A27673BF5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A96EEFF-37EF-47ED-A3F3-4A27673BF5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,8 @@ Global
 		{CA22CE4E-1FEA-48EA-BEBA-F1B323C075E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA22CE4E-1FEA-48EA-BEBA-F1B323C075E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA22CE4E-1FEA-48EA-BEBA-F1B323C075E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{744E596F-96DF-453D-8103-D27B64DDEFC8}.Debug|Any CPU.ActiveCfg = Debug
+		{744E596F-96DF-453D-8103-D27B64DDEFC8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

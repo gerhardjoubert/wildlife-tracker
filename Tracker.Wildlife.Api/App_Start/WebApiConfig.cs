@@ -13,12 +13,16 @@ namespace Tracker.Wildlife.Api
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            // Add CORS Support
+            //EnableCorsAttribute CorsAttribute = new EnableCorsAttribute("*", "*", "GET,POST,PUT,PATCH,DELETE");
+            //config.EnableCors(CorsAttribute);
+            config.EnsureInitialized();
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
         }
     }
 }
