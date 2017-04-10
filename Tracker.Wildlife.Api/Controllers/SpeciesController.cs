@@ -16,43 +16,34 @@ namespace Tracker.Wildlife.Api.Controllers
         // GET api/species
         [HttpGet]
         [Route("species")]
-        public HttpResponseMessage Get()
+        public async Task<HttpResponseMessage> Get()
         {
-           
-                AnimalRepository ar = new AnimalRepository();
-                return Res ResponseMessage( ar.SelectAll();
-               
-            //}
-            //catch (Exception e)
-            //{
-            //    throw new Exception(e.Message, e.InnerException);
-            //}
-
-            //return Ok<List<Animal>>(result);
+            SpeciesRepository sr = new SpeciesRepository();
+            return Request.CreateResponse(HttpStatusCode.OK, await sr.SelectAll());
         }
 
         // POST api/species
-        [HttpPost]
-        [Route("species")]
-        public HttpResponseMessage Post([FromBody] Species speciesModel)
-        {
-            if (speciesModel == null)
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ID Number is required");
-            if (!ModelState.IsValid)
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ID Number should have a length of 13");
+        //[HttpPost]
+        //[Route("species")]
+        //public HttpResponseMessage Post([FromBody] Species speciesModel)
+        //{
+        //    if (speciesModel == null)
+        //        return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ID Number is required");
+        //    if (!ModelState.IsValid)
+        //        return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ID Number should have a length of 13");
 
-            try
-            {
-                bool isValid = speciesModel.idNumber.IsValid(speciesModel.idNumber);
-                if (!isValid)
-                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ID Number is invalid");
+        //    try
+        //    {
+        //        bool isValid = speciesModel.idNumber.IsValid(speciesModel.idNumber);
+        //        if (!isValid)
+        //            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ID Number is invalid");
 
-                return Request.CreateResponse(HttpStatusCode.OK, "ID Number is valid");
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message, e.InnerException);
-            }
-        }
+        //        return Request.CreateResponse(HttpStatusCode.OK, "ID Number is valid");
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw new Exception(e.Message, e.InnerException);
+        //    }
+        //}
     }
 }

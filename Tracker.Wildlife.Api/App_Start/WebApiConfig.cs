@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Tracker.Wildlife.Api
 {
@@ -14,8 +15,8 @@ namespace Tracker.Wildlife.Api
             // Web API routes
             config.MapHttpAttributeRoutes();
             // Add CORS Support
-            //EnableCorsAttribute CorsAttribute = new EnableCorsAttribute("*", "*", "GET,POST,PUT,PATCH,DELETE");
-            //config.EnableCors(CorsAttribute);
+            EnableCorsAttribute CorsAttribute = new EnableCorsAttribute("*", "*", "GET,POST,PUT,PATCH,DELETE");
+            config.EnableCors(CorsAttribute);
             config.EnsureInitialized();
 
             //config.Routes.MapHttpRoute(

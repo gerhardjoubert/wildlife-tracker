@@ -26,19 +26,21 @@
     <link rel="stylesheet" href="../css/ol.css" type="text/css">
     <script src="../js/jquery-1.11.1.min.js"></script>
     <script src="../js/ol.js"></script>
-    
+
 
 </head>
 <body>
 
     <div id="map" class="map"></div>
+    <canvas id="canvas"></canvas>
     <script>
+        var map = null;
         $(document).ready(function () {
             LoadMap();
         })
 
         function LoadMap() {
-            var map = new ol.Map({
+            map = new ol.Map({
                 target: 'map',
                 layers: [
                   new ol.layer.Tile({
@@ -46,12 +48,41 @@
                   })
                 ],
                 view: new ol.View({
-                    center: ol.proj.fromLonLat([15.6482806, -28.1812526]),
-                    zoom: 5.8
+                    center: ol.proj.fromLonLat([27.0634, -25.2475]),
+                    zoom: 11.8
                 })
             });
+
+            $.ajax({
+                method: "GET",
+                url: "http://localhost:55709/api/mapdata"
+            })
+            .success(function (data, status, settings) {
+                $.each(data, function (key, value) {
+                    var circle = new ol.geom.Circle([value.Longitude, value.Latitude], 5);
+                    var circleFeature = new ol.Feature(circle);
+
+                    // Source and vector layer
+                    var vectorSource = new ol.source.Vector({
+                        projection: 'EPSG:4326'
+                    });
+                    vectorSource.addFeature(circleFeature);
+                    var vectorLayer = new ol.layer.Vector({
+                        source: vectorSource
+                    });
+
+                    map.addLayer(vectorLayer);
+                    alert(value.Longitude + ' ' + value.Latitude);
+
+                    
+                });
+            })
+            .error(function (request, status, error) {
+
+            });
+
         }
-        
+
     </script>
 </body>
 </html>

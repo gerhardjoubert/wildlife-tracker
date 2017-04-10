@@ -10,15 +10,15 @@ using Tracker.Wildlife.Api.Repositories;
 namespace Tracker.Wildlife.Api.Controllers
 {
     [RoutePrefix("api")]
-    public class LocationsController : ApiController
+    public class MapDataController : ApiController
     {
-        // GET api/locations
+        // GET api/mapdata
         [HttpGet]
-        [Route("locations")]
+        [Route("mapdata")]
         public async Task<HttpResponseMessage> Get()
         {
-             LocationRepository lr = new LocationRepository();
-            return Request.CreateResponse(HttpStatusCode.OK, await lr.SelectAll());
+            MapDataRepository mdr = new MapDataRepository();
+            return Request.CreateResponse(HttpStatusCode.OK, await mdr.SelectAll());
         }
     }
 }

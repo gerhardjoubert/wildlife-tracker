@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlServerCe;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -16,17 +17,19 @@ namespace Tracker.Wildlife.Api.Repositories
         public async Task<List<Animal>> SelectAll()
         {
             List<Animal> animals = new List<Animal>();
-            SqlCeConnection conn = new SqlCeConnection(WebConfigurationManager.ConnectionStrings["WildlifeTrackerConnectionString"].ConnectionString);
-            SqlCeCommand cmd = new SqlCeCommand("SELECT * FROM Animal", conn);
+            SqlCeConnection con = new SqlCeConnection(WebConfigurationManager.ConnectionStrings["WildlifeTrackerConnectionString"].ConnectionString);
+            SqlCeCommand cmd = new SqlCeCommand("SELECT * FROM Animal", con);
+            await con.OpenAsync();
             SqlCeDataReader rdr = await cmd.ExecuteReaderAsync() as SqlCeDataReader;
             while (await rdr.ReadAsync())
-                {
+            {
                 Animal animal = new Animal();
                 animal.Id = rdr.GetInt32(0);
                 animal.SpeciesId = rdr.GetInt32(1);
                 animals.Add(animal);
             }
-            return 
+
+            return animals;
         }
     }
 }
