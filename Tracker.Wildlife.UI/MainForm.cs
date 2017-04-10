@@ -57,7 +57,7 @@ namespace Tracker.Wildlife.UI
 
         private void cwb_IsBrowserInitializedChanged(object sender, IsBrowserInitializedChangedEventArgs e)
         {
-            string page = string.Format(@"{0}\HTMLResources\html\map.html", Application.StartupPath);
+            string page = string.Format(@"{0}\HTMLResources\html\leaflet-map.html", Application.StartupPath);
             cwb.Load(page);
         }
 

@@ -123,6 +123,9 @@
     <Content Include="HtmlResources\html\chart.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="HtmlResources\html\leaflet-map.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="HtmlResources\html\map.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
